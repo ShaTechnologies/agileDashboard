@@ -29,13 +29,10 @@ Route::get('qa engineer','PagesControllers\QaEngineerController@showQaEngineerPa
 //Route::get('project Accountant','PagesControllers\ProjectAccountantPageController@showProjectAccountantPage');
 
 
-/////////////////////////////////////////QA Engineer/////////////////////////////////////////////////////////
-
+/////////////////////////////////////////QA Engineer/////////////////////////////////////////////////////////////
 Route::get('ajax-dev_first_name/', 'PagesControllers\QaEngineerController@getDevFirstName');
 Route::get('ajax-selected_project_details/', 'PagesControllers\QaEngineerController@getSelectedProjectDetails');
 Route::get('ajax-project_details/', 'PagesControllers\QaEngineerController@getProjectDetails');
-
-/////////////////////////////This mehod is used to store defect details ///////////////////////////////////////////////
 Route::post('qa_engineer', 'PagesControllers\QaEngineerController@storeDefects');
 
 /////////////////////////////////////////Routes for Project Accountant ///////////////////////////////////////////////
@@ -53,3 +50,13 @@ Route::get('project update','PagesControllers\ProjectAccountantPageController@sh
 Route::post('project update', 'PagesControllers\ProjectAccountantPageController@update');
 Route::get('project team','PagesControllers\ProjectAccountantPageController@showProjectAccountantteamPage');
 Route::post('project team', 'PagesControllers\ProjectAccountantPageController@teamAdd');
+
+//////////////////////////////////////Routes for Project Manager////////////////////////////////////////////////////////
+Route::get('project manager','PagesControllers\ProjectManagerPageController@showProductManagerPage');
+Route::post('project manager','PagesControllers\ProjectManagerPageController@putComment');
+Route::get('insert details','PagesControllers\ProjectManagerPageController@passProjDefId');
+
+Route::get('ajax-subcat3/','PagesControllers\ProjectAccountantPageController@ReleaseProject');
+Route::post('insert details','PagesControllers\ProjectManagerPageController@putComment');
+Route::get('qa engineer','PagesControllers\QaEngineerController@showQaEngineerPage');
+//Route::get('insert details','PagesControllers\ProjectManagerPageController@passDefectId');

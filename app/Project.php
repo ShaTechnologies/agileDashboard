@@ -11,10 +11,9 @@ class Project extends Model {
     public static function getProjectDetails()
     {
         $proj=DB::table('projects')->get();
-
-
         return $proj;
     }
+    
     public static function getUsername($id)
     {
         // $proj=DB::table('projects')->get();
@@ -74,5 +73,17 @@ class Project extends Model {
             // ->where('projects.project_id', '=', $pid)
             ->get();
         return $dev;
+    }
+    
+    public static function getAllProjectDetails()
+	{
+	    $proj=DB::table('projects')->where('project_status','=','2')->get();
+	    return $proj;
+	}
+	
+    public static function getProjectDetailsDestinct()
+    {
+             $proj=DB::table('projects')->distinct('project_id')->get();
+             return $proj;
     }
 }

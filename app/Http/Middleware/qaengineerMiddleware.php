@@ -65,7 +65,14 @@ class qaengineerMiddleware {
 		}
 		elseif($request->user()->usertype == 'pm')
 		{
-			return redirect('project manager');
+			$projects=Project::getProjectDetails();
+			$defects=Defect::tablejoin();
+			$defectids=Defect::getDefectId();
+			$dev_defects=DevoloperDefects::getDevoloperDefectsDetails();
+			$teams=Teams::getTeams();
+			return view ('ProjectManager.project manager')->with('project',$projects)->
+			with('defect',$defects)->with('dev_defect',$dev_defects)->
+			with('defectid',$defectids)->with('team',$teams);//creating variables from models and returning to views
 		}
 		return $next($request);
 	}
