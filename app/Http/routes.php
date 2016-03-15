@@ -26,7 +26,7 @@ Route::controllers([
 Route::get('developer','PagesControllers\DeveloperPageController@showDeveloperPage');
 Route::get('project manager','PagesControllers\ProjectManagerPageController@showProductManagerPage');
 Route::get('qa engineer','PagesControllers\QaEngineerController@showQaEngineerPage');
-Route::get('project Accountant','PagesControllers\ProjectAccountantPageController@showProjectAccountantPage');
+//Route::get('project Accountant','PagesControllers\ProjectAccountantPageController@showProjectAccountantPage');
 
 
 /////////////////////////////////////////QA Engineer/////////////////////////////////////////////////////////
@@ -37,3 +37,19 @@ Route::get('ajax-project_details/', 'PagesControllers\QaEngineerController@getPr
 
 /////////////////////////////This mehod is used to store defect details ///////////////////////////////////////////////
 Route::post('qa_engineer', 'PagesControllers\QaEngineerController@storeDefects');
+
+/////////////////////////////////////////Routes for Project Accountant ///////////////////////////////////////////////
+Route::get('ajax-subcat/','PagesControllers\ProjectAccountantPageController@populatedev');
+Route::get('ajax-subcat2/','PagesControllers\ProjectAccountantPageController@populateqa');
+Route::get('ajax-subcat3/','PagesControllers\ProjectAccountantPageController@deleteProject');
+Route::get('ajax-subcat4/','PagesControllers\ProjectAccountantPageController@getId');
+Route::get('developer','PagesControllers\DeveloperPageController@showDeveloperPage');
+Route::get('project manager','PagesControllers\ProjectManagerPageController@showProductManagerPage');
+Route::get('qa engineer','PagesControllers\QaEngineerController@showQaEngineerPage');
+Route::get('project Accountant','PagesControllers\ProjectAccountantPageController@showProjectAccountantPage');
+Route::post('project Accountant', 'PagesControllers\ProjectAccountantPageController@store');
+Route::get('dashboard','PagesControllers\ProjectAccountantPageController@showPaDashBoard');
+Route::get('project update','PagesControllers\ProjectAccountantPageController@showProjectAccountantupdatePage');
+Route::post('project update', 'PagesControllers\ProjectAccountantPageController@update');
+Route::get('project team','PagesControllers\ProjectAccountantPageController@showProjectAccountantteamPage');
+Route::post('project team', 'PagesControllers\ProjectAccountantPageController@teamAdd');

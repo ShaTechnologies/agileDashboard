@@ -4,6 +4,9 @@ use Closure;
 use App\Project as Project;
 use Auth;
 use Illuminate\Support\Facades\DB as DB;
+use App\User;
+use App\Devteam;
+use App\Qateam;
 
 class qaengineerMiddleware {
 
@@ -39,7 +42,26 @@ class qaengineerMiddleware {
 		}
 		elseif($request->user()->usertype == 'pa')
 		{
-			return redirect('project Accountant');
+			//get all the values from models
+			$users=User::getUserDeatails();
+			$userqas=User::getUserTypeDetails('qa');
+			$userpms=User::getUserTypeDetails('pm');
+			$userpas=User::getUserTypeDetails('pa');
+			$useracs=User::getUserTypeDetails('ca');
+			$devteams=Devteam::getDevDeatails();
+			$qateams=Qateam::getQADetails();
+			$projects=Project::getProjectDetails();
+
+			//pass all the recived values to view
+			return view('projectAccountant.project Accountant')
+				->with('user',$users)
+				->with('userqa',$userqas)
+				->with('userpm',$userpms)
+				->with('userac',$useracs)
+				->with('userpa',$userpas)
+				->with('devteam',$devteams)
+				->with('qateam',$qateams)
+				->with('project',$projects);
 		}
 		elseif($request->user()->usertype == 'pm')
 		{
