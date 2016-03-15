@@ -38,7 +38,7 @@ class qaengineerMiddleware {
 		}
 		elseif($request->user()->usertype == 'dev')
 		{
-			return redirect('developer');
+			return redirect('developer.developer');
 		}
 		elseif($request->user()->usertype == 'pa')
 		{
