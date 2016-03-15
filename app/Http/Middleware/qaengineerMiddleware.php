@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\DB as DB;
 use App\User;
 use App\Devteam;
 use App\Qateam;
-
+use App\Defect;
+use App\Teams;
+use App\DevoloperDefects;
 class qaengineerMiddleware {
 
 	/**
