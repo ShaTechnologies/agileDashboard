@@ -1,0 +1,58 @@
+
+.overlaypop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index:999999;
+  transition: opacity 500ms;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 50;
+
+}
+.overlaypop:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  left: 10%;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid brown;
+  border-radius: 5px;
+  width: 75%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+
+.popup .closepop {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .closepop:hover {
+  color: #06D85F;
+}
+.popup .contentpop {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
