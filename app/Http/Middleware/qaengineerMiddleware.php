@@ -13,6 +13,7 @@ use App\DevoloperDefects;
 class qaengineerMiddleware {
 
 	/**
+	 * 
 	 * Handle an incoming request.
 	 *
 	 * @param  \Illuminate\Http\Request  $request
